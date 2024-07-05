@@ -702,7 +702,6 @@ def register(path: str, tag: str, db: Session = Depends(get_db)):
     
     img = Image.open(path).convert('RGB')
     base_data_df = preprocess_maker(img, tag, db)
-    base_data_df.to_excel("data.xlsx", index=False)
     
     #   always train the model
     try:
