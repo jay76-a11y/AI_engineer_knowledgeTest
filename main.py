@@ -669,7 +669,7 @@ def root():
     return {'hello': 'world'}
 
 #   delete face
-@app.delete('/face')
+@app.delete('/api/face')
 def delete_by_face(label: str, db: Session = Depends(get_db)):
     global base_data_df
     try:
@@ -688,7 +688,7 @@ def delete_by_face(label: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=f"Error deleting records: {str(e)}")
 
 #   show all faces
-@app.get('/face')  
+@app.get('/api/face')  
 def show_faces():
     global base_data_df
     list_face = list(base_data_df['label'].unique())    
@@ -696,7 +696,7 @@ def show_faces():
     return list_face
 
 #   recognize + input data inside the db
-@app.post('/register')
+@app.post('/api/face/register')
 def register(path: str, tag: str, db: Session = Depends(get_db)):
     global base_data_df
     
@@ -726,7 +726,7 @@ def train_model():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error training model: {str(e)}")
 
-@app.post('/recognize')
+@app.post('/api/face/recognize')
 def predict(path: str):
     try:
 

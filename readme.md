@@ -24,7 +24,7 @@ when running this, the app will be initiated and will automatically pick the dat
 ### [GET] face
 this function will pull all of the registered face on the database
 ```
-Invoke-RestMethod -Uri "http://127.0.0.1:8000/face" -Method Get -ContentType "application/json"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/face" -Method Get -ContentType "application/json"
 ```
 
 ### [POST] register
@@ -33,7 +33,7 @@ this function will register the face inputted, I also do a simple image augmenta
 on register, it is needed to give path of the picture and also the label of the picture as in this example
 
 ```
-Invoke-RestMethod -Uri "http://127.0.0.1:8000/register?path=jenna.jpg&tag=jenna" -Method Post -ContentType "application/json"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/face/register?path=jenna.jpg&tag=jenna" -Method Post -ContentType "application/json"
 ```
 
 ### [POST] recognize
@@ -41,7 +41,7 @@ this function will detect (predict) name of the given picture with KNN model.
 the reason why I use KNN is because the limitation of the data that I had to train a better model, so for this small project, I choose to use KNN instead
 this call will only take Path of the image
 ```
-Invoke-RestMethod -Uri "http://127.0.0.1:8000/recognize?path=jenna.jpg" -Method Post -ContentType "application/json"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/face/recognize?path=jenna.jpg" -Method Post -ContentType "application/json"
 ```
 
 ### [DELETE] face
@@ -49,7 +49,7 @@ this call will delete the given name on the database and will also retrain the m
 the input for this call is the "Name" that need to be deleted from the database
 
 ```
-Invoke-RestMethod -Uri "http://127.0.0.1:8000/face?label=jenna" -Method Delete -ContentType "application/json"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/face?label=jenna" -Method Delete -ContentType "application/json"
 ```
 
 
