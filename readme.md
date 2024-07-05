@@ -30,7 +30,7 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/face" -Method Get -ContentType "ap
 ### [POST] register
 this function will register the face inputted, I also do a simple image augmentation to add datas on the same label
 
-on register, it is needed to give path of the picture and also the label of the picture
+on register, it is needed to give path of the picture and also the label of the picture as in this example
 
 ```
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/register?path=jenna1.jpeg&tag=jenna" -Method Post -ContentType "application/json"
