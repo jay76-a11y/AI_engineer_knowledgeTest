@@ -21,13 +21,13 @@ uvicorn main:app --reload
 ```
 when running this, the app will be initiated and will automatically pick the data inside the database in postgreSQL
 
-## [GET] face
+### [GET] face
 this function will pull all of the registered face on the database
 ```
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/face" -Method Get -ContentType "application/json"
 ```
 
-## [POST] register
+### [POST] register
 this function will register the face inputted, I also do a simple image augmentation to add datas on the same label
 
 on register, it is needed to give path of the picture and also the label of the picture
