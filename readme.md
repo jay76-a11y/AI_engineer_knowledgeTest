@@ -9,6 +9,6 @@ there are 4 main call to use this program
 
 
 first, need to run the app
-\`\`\`python
+```python
 uvicorn main:app --reload
-\`\`\`
+```
