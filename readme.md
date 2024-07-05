@@ -6,6 +6,9 @@ this project consisting of 3 files with main.py is the most important file where
 
 #  How To Run
 there are 4 main call to use this program
-\`\`\`
 
+
+first, need to run the app
+\`\`\`
+uvicorn main:app --reload
 \`\`\`
