@@ -5,7 +5,7 @@ end-to-end project made to do face recognition using features extracted from a p
 this project consisting of 3 files with main.py is the most important file where I put most of the work there.
 
 # preparation
-first prepare the postgreSQL server and the database will be used under the file databse.py
+first prepare the postgreSQL server and the database will be used under the file [databse.py](https://github.com/jay76-a11y/AI_engineer_knowledgeTest/blob/main/database.py "Named link title")
 
 ```
 DATABASE_URL = "postgresql://postgres:maulana@localhost:5432/pydb"
